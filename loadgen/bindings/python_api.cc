@@ -168,10 +168,10 @@ class QueryDispatchLibraryTrampoline : public QueryDispatchLibrary {
 /// \brief Python bindings.
 namespace py {
 
-uintptr_t ConstructSUT(IssueQueryCallback issue_cb,
+uintptr_t ConstructSUT(std::string name, IssueQueryCallback issue_cb,
                        FlushQueriesCallback flush_queries_cb) {
   SystemUnderTestTrampoline* sut =
-      new SystemUnderTestTrampoline("PySUT", issue_cb, flush_queries_cb);
+      new SystemUnderTestTrampoline(name, issue_cb, flush_queries_cb);
   return reinterpret_cast<uintptr_t>(sut);
 }
 
