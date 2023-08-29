@@ -582,7 +582,7 @@ def main():
         settings.multi_stream_expected_latency_ns = int(args.max_latency * NANO_SEC)
 
     performance_sample_count = args.performance_sample_count if args.performance_sample_count else min(count, 500)
-    sut = lg.ConstructSUT(issue_queries, flush_queries)
+    sut = lg.ConstructSUT("PySUT", issue_queries, flush_queries)
     qsl = lg.ConstructQSL(count, performance_sample_count, ds.load_query_samples, ds.unload_query_samples)
 
     log.info("starting {}".format(scenario))

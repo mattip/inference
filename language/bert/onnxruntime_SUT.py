@@ -48,7 +48,7 @@ class BERT_ONNXRuntime_SUT():
             self.sess = onnxruntime.InferenceSession(model_path, self.options, providers=["CPUExecutionProvider"])
 
         print("Constructing SUT...")
-        self.sut = lg.ConstructSUT(self.issue_queries, self.flush_queries)
+        self.sut = lg.ConstructSUT("PySUT", self.issue_queries, self.flush_queries)
         print("Finished constructing SUT.")
 
         self.qsl = get_squad_QSL(args.max_examples)

@@ -52,7 +52,7 @@ class _3DUNET_OV_SUT():
         self.exec_net = ie.load_network(network=net, device_name='CPU')
 
         print("Constructing SUT...")
-        self.sut = lg.ConstructSUT(self.issue_queries, self.flush_queries)
+        self.sut = lg.ConstructSUT("PySUT", self.issue_queries, self.flush_queries)
         self.qsl = get_brats_QSL(preprocessed_data_dir, performance_count)
         print("Finished constructing SUT.")
 

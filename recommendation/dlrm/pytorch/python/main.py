@@ -583,7 +583,7 @@ def main():
         settings.server_target_latency_ns = int(args.max_latency * NANO_SEC)
         settings.multi_stream_expected_latency_ns = int(args.max_latency * NANO_SEC)
 
-    sut = lg.ConstructSUT(issue_queries, flush_queries)
+    sut = lg.ConstructSUT("PySUT", issue_queries, flush_queries)
     qsl = lg.ConstructQSL(count, min(count, args.samples_per_query_offline), ds.load_query_samples, ds.unload_query_samples)
 
     log.info("starting {}".format(scenario))

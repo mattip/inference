@@ -32,7 +32,7 @@ class _3DUNET_ONNXRuntime_SUT():
         self.sess = onnxruntime.InferenceSession(model_path)
 
         print("Constructing SUT...")
-        self.sut = lg.ConstructSUT(self.issue_queries, self.flush_queries)
+        self.sut = lg.ConstructSUT("PySUT", self.issue_queries, self.flush_queries)
         self.qsl = get_brats_QSL(preprocessed_data_dir, performance_count)
         print("Finished constructing SUT.")
 

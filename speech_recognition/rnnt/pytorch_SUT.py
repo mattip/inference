@@ -50,7 +50,7 @@ class PytorchSUT:
         rnnt_vocab = add_blank_label(dataset_vocab)
         featurizer_config = config['input_eval']
 
-        self.sut = lg.ConstructSUT(self.issue_queries, self.flush_queries)
+        self.sut = lg.ConstructSUT("PySUT", self.issue_queries, self.flush_queries)
         self.qsl = AudioQSLInMemory(dataset_dir,
                                     manifest_filepath,
                                     dataset_vocab,

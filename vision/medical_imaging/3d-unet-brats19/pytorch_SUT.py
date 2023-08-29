@@ -40,7 +40,7 @@ class _3DUNET_PyTorch_SUT():
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
         print("Constructing SUT...")
-        self.sut = lg.ConstructSUT(self.issue_queries, self.flush_queries)
+        self.sut = lg.ConstructSUT("PySUT", self.issue_queries, self.flush_queries)
         print("Finished constructing SUT.")
         self.qsl = get_brats_QSL(preprocessed_data_dir, performance_count)
 

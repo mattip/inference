@@ -45,7 +45,7 @@ class BERT_TF_SUT():
             tf.import_graph_def(graph_def, name='')
 
         print("Constructing SUT...")
-        self.sut = lg.ConstructSUT(self.issue_queries, self.flush_queries)
+        self.sut = lg.ConstructSUT("PySUT", self.issue_queries, self.flush_queries)
         print("Finished constructing SUT.")
 
         self.qsl = get_squad_QSL(args.max_examples)
